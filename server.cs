@@ -263,18 +263,15 @@ package Event_AddRandomItem
 		}
 
 		else if(isObject(findClientByBL_ID(%brick.getGroup().bl_id)))
-		{
+	        {
 			%client = findClientByBL_ID(%brick.getGroup().bl_id);
 		}
 
-		if(!isObject(%client) || !isObject(%player = %client.player))
-		{
-			if(%data.getName() $= "BrickRandomItemSpawnData" && !%client.isAdmin)
-			{
-				%failed = true;
+		if(isObject(%client) && %data.getName() $= "BrickRandomItemSpawnData" && !%client.isAdmin)
+	        {
+			%failed = true;
 
-				brickPlantSound.setName("BrickPlantSound_Temp");
-			}
+			brickPlantSound.setName("BrickPlantSound_Temp");
 		}
 
 		parent::onTrustCheckFinished(%data, %brick);
