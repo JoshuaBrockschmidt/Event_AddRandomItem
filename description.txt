@@ -1,0 +1,3 @@
+Title: Player - addRandomItem
+Author: Jes00. (modified by SadBlobfish)
+Gives the player a random item of the color category you choose.
